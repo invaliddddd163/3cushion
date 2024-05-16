@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 Cushion - Store</title>
+    <link rel="stylesheet" href="styles.css">
+	<style>
+        nav 
+		{
+            background-color: #48E5AC;
+            position: fixed; 
+            width: 100%; 
+            top: 0; 
+            z-index: 1000; 
+        }
+
+        nav ul 
+		{
+            list-style-type: none; 
+            margin: 0;
+            padding: 0;
+            text-align: center; 
+        }
+
+        nav ul li 
+		{
+            display: inline-block; 
+            margin: 0 10px;
+        }
+
+        nav ul li a 
+		{
+            color: white; 
+            text-decoration: none; 
+            padding: 10px 20px; 
+            display: block;
+        }
+
+        nav ul li a:hover 
+		{
+            background-color: #2B8464; 
+			transform: scale(1.1); 
+			transition: transform 0.3s ease;
+        }
+		
+		
+		body 
+		{
+		margin: 0;
+		padding: 0;
+		font-family: Arial, sans-serif;
+		background-color: #f2f2f2;
+		}
+
+		.header 
+		{
+		background-image: url('BG.jpg');
+		background-size: cover;
+		background-position: center;		
+		color: white;
+		padding: 160px 0;
+		margin-bottom: 10px;
+		opacity: 1;
+		filter: brightness(70%);
+		}
+
+		h1 
+		{			
+			font-size: 36px;
+		}
+		.header h1 
+		{
+		text-align: left;
+		margin-left: 100px;
+		font-size: 55px;
+		color: #ffffff;
+		font-weight: bold;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+		}
+		button 
+		{
+		padding: 15px 40px; 
+		font-size: 16px; 
+		border: 1px solid #ccc;
+		border-radius: 10px;
+		cursor: pointer;
+		transition: transform 0.3s ease;
+		}		
+		.cart-button 
+		{
+		background-color: #4CAF50;
+		color: white;
+		}	
+		.checkout-button {
+		background-color: #008CBA;
+		color: white;
+		}
+		.reset-cart-button 
+		{
+		background-color: #f44336; 
+		color: white;
+		}
+
+		button:hover 
+		{
+		transform: scale(1.1);
+		opacity: 1;		
+		}
+		
+		.item 
+		{
+            max-width: 1300px;
+			border: 5px solid #ccc;
+			padding: 25px;
+			border: 3px solid #ccc;
+			border-radius: 10px;
+			margin: 40px auto;
+			display: flex;
+            flex-direction: row;
+            align-items: center;
+			background: linear-gradient(135deg, #ffffff, #b3e6cc);
+        }
+        .item img 
+		{
+		width: 200px; 
+		height: 150px; 
+		object-fit: cover; 
+		margin-right: 20px;
+		transition: transform 0.4s ease;
+		}
+		.item img:hover 
+		{
+		transform: scale(1.2);
+		}
+		.item-details 
+		{
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		}
+
+		.item-details h2,
+		.item-details .price,
+		.item-details .add-to-cart 
+		{
+		margin-top: 40px;
+		margin-right: 70px;
+		}
+		h1 
+		{
+		text-align: center;
+		}	
+		.button-container 
+		{
+		text-align: center; 
+		margin-top: 20px;
+		}
+    </style>
+
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+			<li><a href="store.html">Products</a></li> 
+			<li><a href="regis.html">Registration</a></li> 
+        </ul>
+    </nav>
+	<div class="header">
+        <h1>3 Cushion Billiards Online Store</h1>
+    </div>
+    <div class="item-container">
+		<div class="item">
+		<a href="BC1.jpg" target="_blank">
+        <img src="BC1.jpg" alt="Billiard Cue">
+		</a>		
+			<div class="item-details">
+			<h2>Shadowstrike Ebony</h2>
+			<p>Price: PhP1300</p>
+			</div>
+		<button class="add-to-cart" onclick="addToCart('Shadowstrike Ebony', 1300)">Add to Cart</button>
+		</div>
+		<div class="item">
+		<a href="BC2.jpg" target="_blank">
+        <img src="BC2.jpg" alt="Billiard Cue">
+		</a>
+			<div class="item-details">
+			<h2>Midnight Sniper</h2>
+			<p>Price: PhP1500</p>
+			</div>
+		<button class="add-to-cart" onclick="addToCart('Midnight Sniper', 1500)">Add to Cart</button>
+		</div>
+		<div class="item">
+		<a href="BC3.jpg" target="_blank">
+        <img src="BC3.jpg" alt="Billiard Cue">
+		</a>
+			<div class="item-details">
+			<h2>Obsidian Fury</h2>
+			<p>Price: PhP2600</p>
+			</div>
+		<button class="add-to-cart" onclick="addToCart('Obsidian Fury', 2600)">Add to Cart</button>
+		</div>
+		<div class="item">
+		<a href="BC4.jpg" target="_blank">
+        <img src="BC4.jpg" alt="Billiard Cue">
+		</a>
+			<div class="item-details">
+			<h2>Royal Blazon</h2>
+			<p>Price: PhP3000</p>
+			</div>
+		<button class="add-to-cart" onclick="addToCart('Royal Blazon', 3000)">Add to Cart</button>
+		</div>
+	</div>	
+	<div class="item-container2">
+		<div class="item">
+		<a href="BBS1.jpg" target="_blank">
+		<img src="BBS1.jpg" alt="Billiard Balls Set">
+		</a>
+			<div class="item-details">
+			<h2>Flare Spheres</h2>
+			<p>Price: PhP800</p>
+			</div>
+		<button class="add-to-cart" onclick="addToCart('Flare Spheres', 800)">Add to Cart</button>
+		</div>
+		<div class="item">
+		<a href="BBS2.jpg" target="_blank">
+		<img src="BBS2.jpg" alt="Billiard Balls Set">
+		</a>
+			<div class="item-details">
+			<h2>Cosmic Cascade</h2>
+			<p>Price: PhP750</p>
+			</div>
+        <button class="add-to-cart" onclick="addToCart('Cosmic Cascade', 750)">Add to Cart</button>
+		</div>
+		<div class="item">
+		<a href="BBS3.jpg" target="_blank">
+		<img src="BBS3.jpg" alt="Billiard Balls Set">
+		</a>
+			<div class="item-details">
+			<h2>Mystic Marbles</h2>
+			<p>Price: PhP1000</p>
+			</div>
+		<button class="add-to-cart" onclick="addToCart('Mystic Marbles', 1000)">Add to Cart</button>
+		</div>
+		<div class="item">
+		<a href="BBS4.jpg" target="_blank">
+		<img src="BBS4.jpg" alt="Billiard Balls Set">
+		</a>
+			<div class="item-details">
+			<h2>Emerald Enigma</h2>
+			<p>Price: PhP900</p>
+			</div>
+		<button class="add-to-cart" onclick="addToCart('Emerald Enigma', 900)">Add to Cart</button>
+		</div>
+	</div>
+	<div class="item-container">
+		<div class="item">
+		<a href="CH1.jpg" target="_blank">
+		<img src="CH1.jpg" alt="Billiard Chalk">
+		</a>
+			<div class="item-details">
+			<h2>Diamond Dust</h2>
+			<p>Price: PhP300</p>
+			</div>
+		<button class="add-to-cart" onclick="addToCart('Diamond Dust', 300)">Add to Cart</button>
+		</div>
+		<div class="item">
+		<a href="CH2.jpg" target="_blank">
+		<img src="CH2.jpg" alt="Billiard Chalk">
+		</a>
+			<div class="item-details">
+			<h2>Lunar Luster</h2>
+			<p>Price: PhP450</p>
+			</div>
+		<button class="add-to-cart" onclick="addToCart('Lunar Luster', 450)">Add to Cart</button>
+		</div>
+		<div class="item">
+		<a href="CH3.jpg" target="_blank">
+		<img src="CH3.jpg" alt="Billiard Chalk">
+		</a>
+			<div class="item-details">
+			<h2>Sapphire Slate</h2>
+			<p>Price: PhP400</p>
+			</div>
+		<button class="add-to-cart" onclick="addToCart('Sapphire Slate', 400)">Add to Cart</button>
+		</div>
+		<div class="item">
+		<a href="CH4.jpg" target="_blank">
+		<img src="CH4.jpg" alt="Billiard Chalk">
+		</a>
+			<div class="item-details">
+			<h2>Velvet Vortex</h2>
+			<p>Price: PhP500</p>
+			</div>
+		<button class="add-to-cart" onclick="addToCart('Velvet Vortex', 500)">Add to Cart</button>
+		</div>
+	</div>	
+    <div class="button-container">
+    <button class="cart-button" onclick="showCart()">Cart</button>
+    <button class="reset-cart-button" onclick="resetCart()">Reset Cart</button>
+    <button class="checkout-button" onclick="checkout()">Checkout</button>
+	</div>
+
+    <script>
+		const cart = [];
+		
+		function addToCart(itemName, price) 
+		{
+            cart.push({ name: itemName, price: price });
+            alert(`${itemName} added to cart!`);
+        }
+
+
+        function showCart() 
+		{
+            if (cart.length === 0) {
+                alert('Your cart is empty.');
+                return;
+            }
+
+            let cartItems = "Items in your cart:\n";
+            let total = 0;
+            cart.forEach(item => {
+                cartItems += `${item.name}: PhP${item.price}\n`;
+                total += item.price;
+            });
+
+            cartItems += `\nTotal: PhP${total}`;
+            alert(cartItems);
+        }
+		
+		function resetCart() 
+		{
+        cart.length = 0; 
+        alert('Cart has been reset.');
+		}
+
+		function checkout() {
+    if (cart.length === 0) {
+        alert("Your cart is empty. Please add items before proceeding to checkout.");
+        return;
+    }
+
+    if (checkIfRegistered()) {
+        var paymentMethod = prompt("Please select your payment method:\n1. Debit Card\n2. Credit Card\n3. Cash on Delivery");
+        if (paymentMethod) {
+            if (paymentMethod === "1" || paymentMethod === "2") {
+                var cardNumber = prompt("Enter your card number:");
+                if (!cardNumber || !isValidCardNumber(cardNumber)) {
+                    alert("Please provide a valid card number.");
+                    return;
+                }
+                var expirationDate = prompt("Enter your card expiration date (MM/YYYY):");
+                if (!expirationDate || !isValidExpirationDate(expirationDate)) {
+                    alert("Please provide a valid expiration date (MM/YYYY).");
+                    return;
+                }
+                var cvv = prompt("Enter your card CVV:");
+                if (!cvv || !isValidCVV(cvv)) {
+                    alert("Please provide a valid CVV.");
+                    return;
+                }
+
+                var total = calculateTotal();
+                var receipt = `Receipt:\n\nPayment Method: ${paymentMethod === "1" ? "Debit Card" : "Credit Card"}\n\nCard Number: ${cardNumber}\nExpiration Date: ${expirationDate}\n\nTotal Amount: PHP ${total.toFixed(2)}`;
+                alert(receipt);
+                
+                alert("Order confirmed! Your items will be delivered soon. Thank you!");
+            } else if (paymentMethod === "3") {
+                var cashAmount = parseFloat(prompt("Enter the amount of cash you will use:"));
+                if (isNaN(cashAmount) || cashAmount <= 0) {
+                    alert("Please provide a valid cash amount.");
+                    return;
+                }
+
+                var recipientName = prompt("Enter recipient's name:");
+                if (!recipientName) {
+                    alert("Please provide the recipient's name.");
+                    return;
+                }
+                var address = prompt("Enter delivery address:");
+                if (!address) {
+                    alert("Please provide the delivery address.");
+                    return;
+                }
+                var contactNumber = prompt("Enter contact number:");
+                if (!contactNumber || !isValidContactNumber(contactNumber)) {
+                    alert("Please provide a valid contact number.");
+                    return;
+                }
+
+                var total = calculateTotal();
+
+                if (cashAmount >= total) {
+                    var change = cashAmount - total;
+                    alert("Change: PHP " + change.toFixed(2));
+                    var receipt = `Receipt:\n\nPayment Method: Cash on Delivery\n\nRecipient's Name: ${recipientName}\nDelivery Address: ${address}\nContact Number: ${contactNumber}\n\nTotal Amount: PHP ${total.toFixed(2)}\nCash Amount: PHP ${cashAmount.toFixed(2)}\nChange: PHP ${change.toFixed(2)}`;
+                    alert(receipt);
+                    
+                    alert("Order confirmed! Your items will be delivered soon. Thank you!");
+                } else {
+                    alert("Insufficient cash amount. Please provide the exact amount or more.");
+                }
+            } else {
+                alert("Invalid payment method selection.");
+            }
+        } else {
+            alert("Please select a payment method.");
+        }
+    } else {
+        redirectToRegistration();
+    }
+}
+		function calculateTotal() {
+		let total = 0;
+		for (let i = 0; i < cart.length; i++) {
+			total += cart[i].price;
+		}
+		return total;
+		}
+
+		function isValidCardNumber(cardNumber) 
+			{
+			return /^\d{16}$/.test(cardNumber);
+			}
+
+	
+		function isValidExpirationDate(expirationDate) 
+			{
+			return /^\d{2}\/\d{4}$/.test(expirationDate);
+			}
+
+
+		function isValidCVV(cvv) 
+			{	
+			return /^\d{3,4}$/.test(cvv); 
+			}
+
+
+		function isValidContactNumber(contactNumber) 
+			{
+			return /^\d{11}$/.test(contactNumber);
+			}
+			
+		function checkIfRegistered() 
+		{
+        var username = localStorage.getItem("username");
+        return username ? true : false;
+		}
+
+		function redirectToRegistration() 
+		{
+        alert("You need to register an account first.");
+        window.location.href = "regis.html";
+		}		
+    </script>
+</body>
+</html>
+
+
